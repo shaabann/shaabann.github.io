@@ -1,0 +1,81 @@
+.navbar {
+  background: #20b2aa;
+  overflow: hidden;
+}
+
+.navbar a{
+  float: left;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar a:last-child {
+  float: right;
+  padding: 5px 16px;
+}
+
+.navbar a:hover {
+  background-color: #FFFFFF;
+  color: black;
+}
+
+.usernav {
+  display: flex;
+  align-items: center;
+  float: right;
+  border: 2px solid black;
+  height: 30px;
+  width: 50px;
+  text-align: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.usernav a {
+  text-decoration: none;
+}
+.title-name {
+  margin-left: 20px
+}
+.forum-title {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+}
+.createForum {
+  width: 100px;
+  height: 25px;
+  margin-left: 20px;
+}
+.forum-display {
+  display: flex;
+  flex-flow: column;
+  margin: 0px 20px;
+}
+
+.forum-contents {
+  display: flex;
+  flex-flow: row;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.forum-desc {
+ display: flex;
+ flex-flow: column;
+}
+
+.forum-desc span {
+  margin-right: 100px;
+}
+
+.forum-desc span:first-child {
+  font-size: 20px;
+}
+
+.forum-date {
+ display: flex;
+ text-align: center;
+ align-items: center;
+}
