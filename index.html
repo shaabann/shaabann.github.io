@@ -3,23 +3,55 @@
   <head>
     <meta charset="utf-8">
     <title>Reddit 2.0</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <div class="navbar">
-      <a href="index.html">Home</a>
-      <div class="usernav">
-        <a href="login.html">Login/Sign Up</a>
-      </div>
+      <a class= "active" href="index.html">Home</a>
       <a href="forum.html">Enter Forum</a>
+      <a href="login.html">Login<br/>Sign Up</a>
     </div>
+
     <div class="welcome">
-      <p>Welcome to Reddit 2.0!<p>
+      <h3>Welcome to Reddit 2.0!<h3>
+    </div>
+
+    <div class="forum-title">
+      <h2 class="title-name">Forums</h2>
+      <input type='submit' class="createForum" value='Create Forum' />
+    </div>
+
+
+    <div class="forum-display">
+      <div class="forum-contents">
+        <div class="forum-desc">
+          <span>Forum1</span>
+          <span>This is the first forum</span>
         </div>
-    
-    
-    <div class="forum">
-      <h2>Forums</h2>
-      <input type='submit' value='Create Forum' />
+        <div class="forum-date">
+          <span>05-13-2020</span>
+        </div>
+      </div>
+      <div class="forum-contents">
+        <div class="forum-desc">
+          <span><a href="forum.html">Forum1</a></span>
+          <span>This is the first forum</span>
+        </div>
+        <div class="forum-date">
+          <span>05-13-2020</span>
+        </div>
+      </div>
+      <div class="forum-contents">
+        <div class="forum-desc">
+          <span>Forum1</span>
+          <span>This is the first forum</span>
+        </div>
+        <div class="forum-date">
+          <span>05-13-2020</span>
+        </div>
+      </div>
+    </div>
+
     <table class="forumTable">
     <tr>
       <th>Forum Name</th>
