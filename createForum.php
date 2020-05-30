@@ -7,11 +7,7 @@
 </head>
 
 <body>
-  <div class="navbar">
-    <a href="index.php">Home</a>
-    <a href="forum.html">Enter Forum</a>
-    <a href="login.html">Login<br />Sign Up</a>
-  </div>
+  <?php include "navbar.php"; ?>
 
   <div class="createTitle">
     <h2>Create A Forum</h2>
@@ -19,7 +15,7 @@
 
   <?php
   //connect to database
-  include "connectvar.php";
+  include "connect.php";
 
   if (isset($_POST['submit'])) {
 
