@@ -44,11 +44,11 @@
   		while($row = mysqli_fetch_array($result)){
         echo   '<div class="forum-contents">';
         echo     '<div class="forum-desc">';
-        echo      '<span><a href="forum.php?ID">'. $row['Name'].'</span>';
+        echo      '<span><a href="forum.php?ID">'. $row['Name'].'</a></span>';
         echo      '<span>'. $row['Description'].'</span>';
         echo    '</div>';
         echo    '<div class="forum-date">';
-        echo      '<span>'. $row['Date_Created'].'</span>';
+        echo      '<span>'. date('n-j-Y', strtotime($row['Date_Created'])).'</span>';
         echo    '</div>';
         echo   '</div>';
       }
