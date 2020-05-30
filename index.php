@@ -24,14 +24,6 @@
  //connect to database
 	include "connectvar.php";
 
-  /* Attempt to connect to MySQL database */
-  $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-
-  // Check connection
-  if($con === false){
-      die("ERROR: Could not connect. " . mysqli_connect_error());
-  }
-
   //get data from forum table
 	$query = "SELECT * FROM Forum";
 	$result = mysqli_query($con, $query);

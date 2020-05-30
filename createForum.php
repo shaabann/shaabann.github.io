@@ -19,13 +19,6 @@
  //connect to database
 	include "connectvar.php";
 
-  /* Attempt to connect to MySQL database */
-  $con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-
-  // Check connection
-  if($con === false){
-      die("ERROR: Could not connect. " . mysqli_connect_error());
-  }
   if (isset($_POST['submit']))
     {
 
@@ -33,8 +26,8 @@
     if($_SERVER['REQUEST_METHOD'] = 'POST')
   {
 
-    $Name = mysqli_real_escape_string($conn, $_POST['forumName']);
-    $Description =mysqli_real_escape_string($conn, $_POST['forumDescription']);
+    $Name = $_POST['forumName'];
+    $Description =$_POST['forumDescription'];
     $Date = date("n-j-Y");
 
       $query = "INSERT INTO Forum(Name, Date_Created, Description)
