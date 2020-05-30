@@ -20,3 +20,6 @@ foreach ($_POST as $key => $value) {
 foreach ($_GET as $key => $value) {
     $_GET[$key] = mysqli_real_escape_string($con, $value);
 }
+foreach ($_COOKIE as $key => $value) {
+    $_COOKIE[$key] = mysqli_real_escape_string($con, $value);
+}

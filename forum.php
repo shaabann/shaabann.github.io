@@ -31,6 +31,7 @@
   <?php echo "<nav id=" . $fourm["ID"] . "></nav>"; ?>
   <ul>
     <?php
+    require_once "connect.php";
     $query = "SELECT * FROM Topic WHERE Forum_ID=" . $_GET["ID"];
     $result = mysqli_query($con, $query);
     $rowCount = mysqli_num_rows($result);
