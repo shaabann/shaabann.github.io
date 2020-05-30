@@ -46,12 +46,15 @@
 
   <fieldset>
     <legend>Text input</legend>
-    <form id="" action="index.php" method="post" class="">
+    <form id="" action="createTopic.php" method="post" class="">
       <h2>Create Topic</h2>
       <fieldset class="topic">
         <legend></legend>
         <label for="Title">Topic Name</label>
-        <input name="Topic Name" id="Post Title" type="text" required placeholder="A Great Topic" maxlength="32" />
+        <input name="Topic" id="Topic" type="text" required placeholder="A Great Topic" maxlength="32" />
+        <label for="Description">Topic Description</label>
+        <input name="Description" id="Description" type="text" required placeholder="A Great Description" maxlength="32" />
+        <input name="Forum_ID" type="number" value="<?php echo $fourm["ID"]; ?>" style="display:none;" />
       </fieldset>
 
       <fieldset>
