@@ -28,6 +28,7 @@
   }
   ?>
   <?php echo "<h2>" . $fourm["Name"] . "</h2>"; ?>
+  <?php echo "<p>" . $fourm["Description"] . "</p>"; ?>
   <?php echo "<nav id=" . $fourm["ID"] . "></nav>"; ?>
   <ul>
     <?php
@@ -40,7 +41,7 @@
         echo '<li><a href="#forum-' . $row['ID'] . '" class="" data-speed="400"><i class=""></i>' . $row['Name'] . '</a></li>';
       }
     } else {
-      echo 'Not available';
+      echo 'No Topics';
     }
     ?>
   </ul>

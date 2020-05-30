@@ -7,3 +7,5 @@ if (mysqli_query($con, $query)) {
 } else {
   echo "ERROR: Could not  create the topic. " . mysqli_error($con);
 }
+?>
+<html><head><meta http-equiv="refresh" content="0; url=forum.php?ID=<?php echo $_POST["Forum_ID"];?>" /></head></html>
