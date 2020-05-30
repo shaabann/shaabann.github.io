@@ -1,3 +1,4 @@
+
 <?php
 /* Database credentials. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
@@ -14,9 +15,8 @@ if($con === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
 foreach ($_POST as $key => $value) {
-    $_POST[$key]=mysqli_real_escape_string($value);
+    $_POST[$key]=mysqli_real_escape_string($con,$value);
 }
 foreach ($_GET as $key => $value) {
-    $_GET[$key]=mysqli_real_escape_string($value);
+    $_GET[$key]=mysqli_real_escape_string($con,$value);
 }
-?>

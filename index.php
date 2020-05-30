@@ -5,11 +5,7 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div class="navbar">
-      <a class= "active" href="index.php">Home</a>
-      <a href="login.html">Login<br/>Sign Up</a>
-    </div>
-
+    <?php include "navbar.php" ?>
     <div class="welcome">
       <h3>Welcome to Reddit 2.0!<h3>
     </div>
@@ -21,7 +17,7 @@
 
 <?php
  //connect to database
-	include "connectvar.php";
+ require_once "connect.php";
 
   //get data from forum table
 	$query = "SELECT * FROM Forum";
@@ -35,7 +31,7 @@
   		while($row = mysqli_fetch_array($result)){
         echo   '<div class="forum-contents">';
         echo     '<div class="forum-desc">';
-        echo      '<span><a href="forum.html?ID">'. $row['Name'].'</a></span>';
+        echo      '<span><a href="forum.php?ID='.$row['ID'].'">'. $row['Name'].'</a></span>';
         echo      '<span>'. $row['Description'].'</span>';
         echo    '</div>';
         echo    '<div class="forum-date">';
