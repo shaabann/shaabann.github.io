@@ -7,7 +7,6 @@
   <body>
     <div class="navbar">
       <a class= "active" href="index.php">Home</a>
-      <a href="forum.html">Enter Forum</a>
       <a href="login.html">Login<br/>Sign Up</a>
     </div>
 
@@ -17,7 +16,7 @@
 
     <div class="forum-title">
       <h2 class="title-name">Forums</h2>
-      <input type='submit' class="createForum" value='Create Forum' />
+      <a class="create" href="createForum.php">Create Forum</a>
     </div>
 
 <?php
@@ -36,7 +35,7 @@
   		while($row = mysqli_fetch_array($result)){
         echo   '<div class="forum-contents">';
         echo     '<div class="forum-desc">';
-        echo      '<span><a href="forum.php?ID">'. $row['Name'].'</a></span>';
+        echo      '<span><a href="forum.html?ID">'. $row['Name'].'</a></span>';
         echo      '<span>'. $row['Description'].'</span>';
         echo    '</div>';
         echo    '<div class="forum-date">';
