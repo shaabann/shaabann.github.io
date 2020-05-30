@@ -13,6 +13,7 @@
 .navbar a:last-child {
   float: right;
   padding: 5px 16px;
+  color:black;
 }
 
 .navbar a:hover {
@@ -47,18 +48,27 @@
   display: flex;
   flex-flow: row;
   align-items: center;
-
 }
 
-.create {
-  border: 1px solid rgb(74, 74, 74);
-  border-radius: 2px;
-  background-color: rgb(239, 239, 239);
-  color: inherit;
+.forum-title a {
+  border: 1px solid black;
   height: 25px;
-  padding: 6px 3px 0px 3px;
+  padding: 6px 3px 3px 3px;
   text-decoration: none;
   margin-left: 20px;
+  color: black;
+  background-color: rgba(209, 209, 209, 1);
+  border-radius: 2px;
+}
+
+.createTitle {
+  text-align: center;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .createForum {
@@ -77,6 +87,10 @@
   flex-flow: row;
   width: 100%;
   margin-bottom: 5px;
+}
+
+.forum-display a:hover {
+    color: #20b2aa;
 }
 
 .forum-desc {
@@ -98,32 +112,24 @@
  align-items: center;
 }
 
-/* .form {
-  float: right;
-  max-width: 300px;
+.form {
+  max-width: 500px;
   background-color: #20b2aa;
   padding: 20px;
 }
 .formCreate {
   display: inline;
-} */
-
-.createTitle {
-  margin-left: 20px;
-}
-
-.form {
-  align-items: center;
-  justify-content: center;
-  width: 50%;
-  margin-left: 20px;
+  align-items: center
 }
 .createForum {
-  max-width: 50%;
+  max-width: 500px;
   display: inline;
 }
 
-.createForum input[type=text], .createForum textarea{
+.createForum input[type=text] {
+  align-items: left;
+}
+.createForum input {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -134,10 +140,18 @@
   margin-left: -20px;
 }
 
-input[type=submit] {
-  width: 50%;
-  padding: 5px;
+.member {
+    display: flex;
+    flex-flow: row;
+    background: #20b2aa;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    margin: 50px;
+    padding: 10px;
+    max-width: 500px;
 }
+
 /* .form-container {
   max-width: 300px;
   padding: 10px;

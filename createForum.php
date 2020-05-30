@@ -11,8 +11,8 @@
       <a href="login.html">Login<br/>Sign Up</a>
     </div>
 
-    <div class="welcome">
-      <h3>Welcome to Reddit 2.0!<h3>
+    <div class="createTitle">
+      <h2>Create A Forum</h2>
     </div>
 
 <?php
@@ -48,6 +48,7 @@
     }
     mysqli_close($con);
   ?>
+    <div class="wrapper">
       <div class="form">
         <form action="post" class="createForum">
           <label for="forumName">Forum Name</label>
@@ -57,6 +58,6 @@
           <input type="submit" value="Create Forum"/>
         </form>
       </div>
-
+    </div>
     </body>
   </html>
