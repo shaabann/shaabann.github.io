@@ -16,7 +16,7 @@
 
     $Name = trim($_POST['forumName']);
     $Description = trim($_POST['forumDescription']);
-    $Date = date("m-d-Y");
+    $Date = date("Y-n-j");
 
     $query = "INSERT INTO Forum(Name, Date_Created, Description)
     VALUES ('$Name', '$Date', '$Description')";
