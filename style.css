@@ -8,6 +8,7 @@
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  border: 1px solid #20b2aa;
 }
 
 .navbar a:last-child {
@@ -152,6 +153,115 @@
     max-width: 500px;
 }
 
+/* .topic-wrapper {
+  display: flex;
+  flex-flow: row;
+} */
+
+aside {
+  float: right;
+  position: fixed;
+  top: 125px;
+  right: 20px;
+  width:30%;
+}
+
+table {
+  width: 60%;
+  font-size: 16px;
+  background-color: #20b2aa;
+}
+
+tr {
+  height: 50px;
+}
+
+td:first-child {
+  padding-left: 10px;
+}
+
+td:last-child {
+  text-align: center;
+}
+
+.topic-title {
+  font-size: 18px;
+}
+
+.topic-desc {
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+/* Post page css*/
+.post-wrapper {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.post{
+  display: flex;
+  border: 2px solid #20b2aa;
+  width: 700px;
+  height: auto;
+  position: relative;
+}
+
+.post:not(:first-child) {
+  margin-top: 10px;
+}
+
+.post-contents {
+  display: flex;
+  flex-flow: column;
+  margin: 5px 10px;
+}
+
+.post-container {
+  display: flex;
+  flex-flow: column;
+}
+
+.reply {
+  color: black;
+  font-weight: bold;
+}
+
+.reply:hover {
+  color: #20b2aa;
+  font-weight: bold;
+}
+
+.post-date, .reply-date {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  margin: 0px;
+}
+
+.post-author {
+  position: absolute;
+  top: 5px;
+  right: 200px;
+}
+
+.post-reply-container {
+  position: relative;
+  margin: 5px;
+  padding: 5px;
+  border: 2px solid #20b2aa;
+  width: 500px;
+}
+
+.post-reply-container:not(:last-child) {
+  margin: 10px 5px 10px 5px;
+}
+
+.reply-author {
+  margin: 0px;
+}
 /* .form-container {
   max-width: 300px;
   padding: 10px;
