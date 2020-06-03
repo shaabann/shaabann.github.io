@@ -14,9 +14,9 @@
 
   if (isset($_POST['forumName'])) {
 
-    $Name = $_POST['forumName'];
-    $Description = $_POST['forumDescription'];
-    $Date = date("n-j-Y");
+    $Name = trim($_POST['forumName']);
+    $Description = trim($_POST['forumDescription']);
+    $Date = date("m-d-Y");
 
     $query = "INSERT INTO Forum(Name, Date_Created, Description)
     VALUES ('$Name', '$Date', '$Description')";
@@ -35,11 +35,12 @@
 
   <div class="wrapper">
     <div class="form">
+      <p>Please Fill Both To Create Forum</p>
       <form method="post" action="#" class="createForum">
         <label for="forumName">Forum Name</label>
-        <input type="text" name="forumName" class="required" id="forumName" />
+        <input type="text" name="forumName" id="forumName" required/>
         <label for="forumDescription">Description</label>
-        <input type="text" name="forumDescription" class="required" id="forumDescription"></textarea>
+        <input type="text" name="forumDescription" id="forumDescription" required></textarea>
         <input type="submit" value="Create Forum" />
       </form>
     </div>

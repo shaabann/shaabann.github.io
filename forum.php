@@ -37,72 +37,50 @@
     $result = mysqli_query($con, $query);
     $rowCount = mysqli_num_rows($result);
     if ($rowCount > 0) {
+      echo '<div class="topic-wrapper">';
+      echo    '<table id="topic">';
+      echo    '<thead>';
+      echo      '<tr>';
+      echo       '<th>Topic</th>';
+      echo        '<th>Description</th>';
+      echo      '</tr>';
+      echo    '</thead>';
       while ($row = mysqli_fetch_array($result)) {
-        echo '<li><a href="#forum-' . $row['ID'] . '" class="" data-speed="400"><i class=""></i>' . $row['Name'] . '</a></li>';
+        echo    '<tr>';
+        echo      '<td><a class=topic-title href="par.php?ID=' .$row['ID'] . '">'.  $row['Name'] .'</a></td>';
+        echo      '<td>'. $row['Description'] .'</td>';
+        echo    '</tr>';
       }
+      echo  '</table>';
+      echo '</div>';
     } else {
       echo 'No Topics';
     }
     ?>
   </ul>
 
-  <fieldset>
-    <legend>Text input</legend>
-    <form id="" action="createTopic.php" method="post" class="">
-      <h2>Create Topic</h2>
-      <fieldset class="topic">
-        <legend></legend>
-        <label for="Title">Topic Name</label>
-        <input name="Topic" id="Topic" type="text" required placeholder="A Great Topic" maxlength="32" />
-        <label for="Description">Topic Description</label>
-        <input name="Description" id="Description" type="text" required placeholder="A Great Description" maxlength="32" />
-        <input name="Forum_ID" type="number" value="<?php echo $fourm["ID"]; ?>" style="display:none;" />
-      </fieldset>
+  <aside class="form">
+    <fieldset>
+      <legend>Text input</legend>
+      <form id="" action="createTopic.php" method="post" class="">
+        <h2>Create Topic</h2>
+        <fieldset class="topic">
+          <legend></legend>
+          <label for="Title">Topic Name</label>
+          <input name="Topic" id="Topic" type="text" required placeholder="A Great Topic" maxlength="32" />
+          <label for="Description">Description</label>
+          <input name="Description" id="Description" type="text" required placeholder="A Great Description" maxlength="32" />
+        </fieldset>
 
-      <fieldset>
-        <label for="submit"></label>
-        <input name="submit" id="submit" type="submit" value="Create Topic" />
-      </fieldset>
-    </form>
+        <fieldset>
+          <label for="submit"></label>
+          <input name="submit" id="submit" type="submit" value="Create Topic" />
+        </fieldset>
+      </form>
 
-  </fieldset>
-  </form>
+    </fieldset>
+  </aside>
 </body>
-
-</html>
-<form>
-  <fieldset>
-    <legend>Text input</legend>
-    <form id="" action="index.php" method="post" class="">
-      <h2>{topic title}</h2>
-      <fieldset class="post">
-        <legend>Put post here</legend>
-        <label for="Title">Post Title</label>
-        <input name="Title" id="Post Title" type="text" required placeholder="A Great Title" maxlength="32" />
-      </fieldset>
-      <fieldset class="">
-        <legend>Prompt...</legend>
-        <p></p>
-        <label for="message">Reply</label>
-        <p></p>
-        <textarea id="post" name="post" required placeholder="Text only" maxlength="1500"></textarea>
-        </label>
-      </fieldset>
-
-      <fieldset>
-        <legend>Create Post</legend>
-        <label for="submit"></label>
-        <input name="submit" id="submit" type="submit" value="Send" />
-        <label for="reset"></label>
-        <input name="reset" id="reset" type="reset" value="Reset" />
-
-      </fieldset>
-    </form>
-
-  </fieldset>
-</form>
-</body>
-
 </html>
 <?php
 mysqli_close($con);
