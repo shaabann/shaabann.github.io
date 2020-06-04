@@ -8,8 +8,7 @@
 </head>
 
 <body>
-  <?php include "navbar.php" ?>
-  <?php
+  <?php include "navbar.php"
   require_once "connect.php";
   $query = "SELECT * FROM Forum WHERE ID=" . $_GET["ID"] . " LIMIT 1";
   $result = mysqli_query($con, $query);
@@ -26,13 +25,11 @@
     echo "Invalid ID " . $_GET["ID"];
     exit;
   }
-  ?>
-  <?php echo "<h2>" . $fourm["Name"] . "</h2>"; ?>
-  <?php echo "<p>" . $fourm["Description"] . "</p>"; ?>
-  <?php echo "<nav id=" . $fourm["ID"] . "></nav>"; ?>
-  <ul>
-    <?php
-    require_once "connect.php";
+
+  echo "<h2>" . $fourm["Name"] . "</h2>";
+  echo "<p>" . $fourm["Description"] . "</p>"; 
+  echo "<nav id=" . $fourm["ID"] . "></nav>";
+
     $query = "SELECT * FROM Topic WHERE Forum_ID=" . $_GET["ID"];
     $result = mysqli_query($con, $query);
     $rowCount = mysqli_num_rows($result);
@@ -57,7 +54,6 @@
       echo 'No Topics';
     }
     ?>
-  </ul>
 
   <aside class="form">
     <fieldset>
