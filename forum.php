@@ -46,7 +46,7 @@
       echo    '</thead>';
       while ($row = mysqli_fetch_array($result)) {
         echo    '<tr>';
-        echo      '<td><a class=topic-title href="par.php?ID=' .$row['ID'] . '">'.  $row['Name'] .'</a></td>';
+        echo      '<td><a class=topic-title href="topic.php?ID=' .$row['Forum_ID'] . '">'.  $row['Name'] .'</a></td>';
         echo      '<td>'. $row['Description'] .'</td>';
         echo    '</tr>';
       }
@@ -68,6 +68,7 @@
           <input name="Topic" id="Topic" type="text" required placeholder="A Great Topic" maxlength="32" />
           <label for="Description">Description</label>
           <input name="Description" id="Description" type="text" required placeholder="A Great Description" maxlength="32" />
+          <input name="Forum_ID" type="text" value="<?php echo $_GET["ID"]; ?>" style="display:none;"/>
         </fieldset>
 
         <fieldset>
