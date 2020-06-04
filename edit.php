@@ -22,9 +22,20 @@
     		$newBody = $_POST['newBody'];
     		$ID = $_POST['ID'];
     		$query = "UPDATE Reply SET Body='$newBody' WHERE ID=" . $ID;
-    		$result = mysqli_query($con, $query);
-
-    		echo "<script> window.location='index.php' </script>";
+        $result = mysqli_query($con, $query);
+        
+        $query = "SELECT Topic_ID FROM Post WHERE `ID`=(SELECT Post_ID FROM Reply WHERE ID=" . $_POST['ID'] . ") LIMIT 1";
+        $result = mysqli_query($con, $query);
+        $rowCount = mysqli_num_rows($result);
+        if ($rowCount > 0) {
+            while ($row = mysqli_fetch_array($result)) {
+                $topic = $row["Topic_ID"];
+            }
+        } else {
+            echo "failed to find topic";
+            exit;
+        }
+    		echo "<script> window.location='par.php?ID=".$topic."' </script>";
     	}
     ?>
     <h2>Edit Reply</h2>
