@@ -30,9 +30,10 @@
                while ($row = mysqli_fetch_array($result)) {
                     echo            '<span class="post-title">'. $row['Title'] .'</span>';
                     echo         '</div>';
-                    echo         '<span class="post-desc">'. $row['Body'] .'</span>';
-                    echo         '<a class="reply" href="#">reply</a>';
-                    echo         '<span class="post-date">06-02-2020</span>';
+                    echo         '<span class="post-desc">'. $row['Body'] .'</span><div class="editing">';
+                    echo         '<a class="reply" href="#"> reply </a>';
+                    echo         '<a class="reply" href="editPost.php?ID=' . $row['ID'] . '"> edit </a></div>';
+                    echo         '<span class="post-date">' . $row['Date'] . '</span>';
                     $postID = $row['ID'];
                     $query = 'SELECT * FROM Reply WHERE Post_ID=' . $postID;
                     $result = mysqli_query($con, $query);
@@ -44,6 +45,7 @@
                             echo    '<p class="reply-author">' . $row['Author'] . '</p>';
                             echo    '<span class="reply-desc">' . $row['Body'] . '</span>';
                             echo    '<span class="reply-date">' . $row['Date'] . '</span>';
+                            echo    '<a href="edit.php?ID=' . $row['ID'] . '">Edit</a>';
                             echo '</div>';
                         }
                     }
@@ -57,7 +59,10 @@
         }
       echo '</div>';
       } else {
-        echo "No Topics ";
+        echo "No Posts or Replies ";
+
+
+
         exit;
       }
     ?>
