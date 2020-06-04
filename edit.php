@@ -35,7 +35,7 @@
             echo "failed to find topic";
             exit;
         }
-    		echo "<script> window.location='forum.php?ID=".$topic."' </script>";
+    		echo "<script> window.location='topic.php?ID=".$topic."' </script>";
     	}
     ?>
     <h2>Edit Reply</h2>

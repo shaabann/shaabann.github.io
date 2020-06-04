@@ -8,7 +8,7 @@
   <body>
     <?php include "navbar.php";
      require_once "connect.php";
-      $query = "SELECT * FROM Topic WHERE Forum_ID=" . $_GET["ID"];
+      $query = "SELECT * FROM Topic WHERE ID=" . $_GET["ID"];
       $result = mysqli_query($con, $query);
       $rowCount = mysqli_num_rows($result);
 
@@ -20,7 +20,7 @@
            echo   '<p>' . $row['Description']. '</p>';
            echo   "<nav id=" . $row["ID"] . "></nav>";
 
-            $post_query = "SELECT * FROM Post WHERE Topic_ID=" . $row["ID"];
+            $post_query = "SELECT * FROM Post WHERE Topic_ID=" . $_GET["ID"];
             $post_result = mysqli_query($con, $post_query);
             $post_rowCount = mysqli_num_rows($post_result);
             if ($post_rowCount > 0) {
@@ -47,8 +47,7 @@
                       </fieldset>
                     </form>
                     <?php
-                    $postID = $row['ID'];
-                    $reply_query = 'SELECT * FROM Reply WHERE Post_ID=' . $postID;
+                    $reply_query = 'SELECT * FROM Reply WHERE Post_ID=' . $post_row["ID"];
                     $reply_result = mysqli_query($con, $reply_query);
                     $reply_rowCount = mysqli_num_rows($reply_result);
 
@@ -78,8 +77,7 @@
           <fieldset class="post">
             <legend>Post</legend>
             <input name="Title" type="text" required placeholder="A Great Title" maxlength="32" />
-            <input name="Topic_ID" value="<?php echo $row["ID"]; ?>" style="display:none;"/>
-            <input name="Forum_ID" value="<?php echo $_GET["ID"]; ?>" style="display:none;"/>
+            <input name="Topic_ID" value="<?php echo $_GET["ID"]; ?>" style="display:none;"/>
             <textarea name="body" required placeholder="Post Body" maxlength="1500" style="width:100%"></textarea>
             <input type="submit"/>
           </fieldset>
