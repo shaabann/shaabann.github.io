@@ -72,6 +72,15 @@
     justify-content: center;
 }
 
+.forumLink, .topicLink {
+  color: black;
+}
+
+.forumLink:hover , .topicLink:hover{
+  color: #20b2aa;
+  font-weight: bold;
+}
+
 .createForum {
   width: 100px;
   height: 25px;
@@ -88,10 +97,6 @@
   flex-flow: row;
   width: 100%;
   margin-bottom: 5px;
-}
-
-.forum-display a:hover {
-    color: #20b2aa;
 }
 
 .forum-desc {
@@ -169,6 +174,9 @@ aside {
 table {
   width: 60%;
   font-size: 16px;
+}
+
+th {
   background-color: #20b2aa;
 }
 
@@ -241,14 +249,32 @@ td:last-child {
   margin: 0px;
 }
 
-.deletePost{
+.deletePost, .deleteReply{
+  font-size: 12px;
+  border: 1px solid #20b2aa;
+  padding: 2px 2px 0px 2px;
   text-decoration: none;
   margin-left: 5px;
+  color: black;
+  background-color:  #20b2aa;
 }
 
-.deletePost:hover{
-  color: #20b2aa;
+.deletePost:hover , .deleteReply:hover{
+  color: white;
   text-decoration: none;
+  border: 1px solid black;
+}
+
+.deletePost:visited{
+  color: black;
+  text-decoration: none;
+}
+
+.postForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 .post-author {
@@ -274,8 +300,14 @@ td:last-child {
 }
 
 .editReply {
-  color: black;
+  color: #21b2aa ;
   text-decoration: none;
+  margin-left: 5px;
+}
+
+.editReply:hover{
+  font-weight: bold;
+  text-decoration: underline;
 }
 /* .form-container {
   max-width: 300px;

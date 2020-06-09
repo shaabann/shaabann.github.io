@@ -19,7 +19,7 @@
 
   <form class="" action="index.php" method="post">
     <input type="text" name="filter" placeholder="Filter"/>
-    <input type="submit" name="search"></input>
+    <input type="submit" name="search" value="Search"></input>
   </form>
   <?php
   //connect to database
@@ -46,7 +46,7 @@
     while ($row = mysqli_fetch_array($result)) {
       echo   '<div class="forum-contents">';
       echo     '<div class="forum-desc">';
-      echo      '<span><a href="forum.php?ID=' . $row['ID'] . '">' . $row['Name'] . '</a></span>';
+      echo      '<span><a class="forumLink" href="forum.php?ID=' . $row['ID'] . '">' . $row['Name'] . '</a></span>';
       echo      '<span>' . $row['Description'] . '</span>';
       echo    '</div>';
       echo    '<div class="forum-date">';
