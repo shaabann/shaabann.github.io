@@ -241,6 +241,16 @@ td:last-child {
   margin: 0px;
 }
 
+.deletePost{
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.deletePost:hover{
+  color: #20b2aa;
+  text-decoration: none;
+}
+
 .post-author {
   position: absolute;
   top: 5px;
@@ -261,6 +271,11 @@ td:last-child {
 
 .reply-author {
   margin: 0px;
+}
+
+.editReply {
+  color: black;
+  text-decoration: none;
 }
 /* .form-container {
   max-width: 300px;

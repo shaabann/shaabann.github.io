@@ -17,13 +17,26 @@
     <a class="create" href="createForum.php">Create Forum</a>
   </div>
 
+  <form class="" action="index.php" method="post">
+    <input type="text" name="filter" placeholder="Filter"/>
+    <input type="submit" name="search"></input>
+  </form>
   <?php
   //connect to database
   require_once "connect.php";
 
+  if(isset($_POST['filter'])) {
+      $search = $_POST['filter'];
+      $query = "SELECT * FROM `Forum` WHERE CONCAT(`Name`, `Description`, `Date_Created`) LIKE '%". $search ."%'";
+  } else {
+      $query = "SELECT * FROM `Forum`";
+  }
+
+
   //get data from forum table
-  $query = "SELECT * FROM Forum";
-  $result = mysqli_query($con, $query);
+  // $query = "SELECT * FROM Forum";
+  // $result = mysqli_query($con, $query);
+  $result =  mysqli_query($con, $query);
   $rowCount = mysqli_num_rows($result);
 
 
@@ -47,7 +60,6 @@
   }
   mysqli_close($con);
   ?>
-
 </body>
 
 </html>
