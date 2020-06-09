@@ -56,7 +56,7 @@
                             echo '<div class="post-reply-container">';
                             echo    '<p class="reply-author">' . $reply_row['Author'] . '</p>';
                             echo    '<span class="reply-desc">' . $reply_row['Body'] . '</span>';
-                            echo    '<span class="reply-date">' . $reply_row['Date'] . '<a href="deleteReply.php?ID=' . $reply_row['ID'] .'">X</a></span>';
+                            echo    '<span class="reply-date">' . $reply_row['Date'] . '<a class="deleteReply" href="deleteReply.php?ID=' . $reply_row['ID'] .'">X</a></span>';
                             echo    '<a class ="editReply" href="edit.php?ID=' . $reply_row['ID'] . '">Edit</a>';
                             echo '</div>';
                         }
@@ -73,15 +73,17 @@
         echo "<div>No Posts or Replies ";
       }
       ?>
+      <div class="postForm">
       <form action="createPost.php" method="post">
           <fieldset class="post">
             <legend>Post</legend>
             <input name="Title" type="text" required placeholder="A Great Title" maxlength="32" />
             <input name="Topic_ID" value="<?php echo $_GET["ID"]; ?>" style="display:none;"/>
             <textarea name="body" required placeholder="Post Body" maxlength="1500" style="width:100%"></textarea>
-            <input type="submit"/>
+            <input type="submit" name="submit" value="submit"></input>
           </fieldset>
         </form>
+      </div>
         <?php
       echo '</div>';
     ?>

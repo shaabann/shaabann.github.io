@@ -30,6 +30,7 @@
   <?php echo "<h2>" . $fourm["Name"] . "</h2>"; ?>
   <?php echo "<p>" . $fourm["Description"] . "</p>"; ?>
   <?php echo "<nav id=" . $fourm["ID"] . "></nav>"; ?>
+
     <?php
     require_once "connect.php";
     $query = "SELECT * FROM Topic WHERE Forum_ID=" . $_GET["ID"];
@@ -46,7 +47,7 @@
       echo    '</thead>';
       while ($row = mysqli_fetch_array($result)) {
         echo    '<tr>';
-        echo      '<td><a class=topic-title href="topic.php?ID=' .$row['Forum_ID'] . '">'.  $row['Name'] .'</a></td>';
+        echo      '<td><a class="topicLink" href="topic.php?ID=' .$row['Forum_ID'] . '">'.  $row['Name'] .'</a></td>';
         echo      '<td>'. $row['Description'] .'</td>';
         echo    '</tr>';
       }
