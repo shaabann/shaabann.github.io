@@ -305,9 +305,28 @@ td:last-child {
   margin-left: 5px;
 }
 
+
+
 .editReply:hover{
   font-weight: bold;
   text-decoration: underline;
+}
+
+.member {
+  text-align: left;
+}
+
+.sign-up {
+  margin-left: 10px;
+  display: inline-block;
+  width: 250px;
+  padding: 0px 30px;
+  /* text-align: left; */
+}
+
+.sign-up h2 {
+  margin: 5px;
+  padding: 5px;
 }
 /* .form-container {
   max-width: 300px;
