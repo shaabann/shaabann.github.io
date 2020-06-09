@@ -34,7 +34,7 @@
                     echo         '<span class="post-desc">'. $post_row['Body'] .'</span><div class="editing">';
                     echo         '<a class="reply" onclick="document.getElementById(\'reply-post-'.$row["ID"].'-'.$post_row['ID'].'\').style.display=\'block\';"> reply </a>';
                     echo         '<a class="reply" href="editPost.php?ID=' . $post_row['ID'] . '"> edit </a></div>';
-                    echo         '<span class="post-date">' . $post_row['Date']. '</span>';
+                    echo         '<span class="post-date">' . $post_row['Date']. '<a class="deletePost" href="deletePost.php?ID=' . $post_row['ID'] .'">X</a></span>';
                     ?>
                     <form id="" action="createReply.php" method="post" class="">
                       <fieldset id="reply-post-<?php echo $row["ID"].'-'.$post_row['ID']; ?>" style="display:none;">
@@ -56,8 +56,8 @@
                             echo '<div class="post-reply-container">';
                             echo    '<p class="reply-author">' . $reply_row['Author'] . '</p>';
                             echo    '<span class="reply-desc">' . $reply_row['Body'] . '</span>';
-                            echo    '<span class="reply-date">' . $reply_row['Date'] . '<a href="deletePost.php?ID=' . $reply_row['ID'] .'">X</a></span>';
-                            echo    '<a href="edit.php?ID=' . $reply_row['ID'] . '">Edit</a>';
+                            echo    '<span class="reply-date">' . $reply_row['Date'] . '<a href="deleteReply.php?ID=' . $reply_row['ID'] .'">X</a></span>';
+                            echo    '<a class ="editReply" href="edit.php?ID=' . $reply_row['ID'] . '">Edit</a>';
                             echo '</div>';
                         }
                     }
