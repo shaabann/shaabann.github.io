@@ -1,14 +1,14 @@
 <?php
 session_start();
-require_once "doLogin.php";
-if(isset($_GET["ID"])&&isset($user)){
+require_once "connect.php";
+if(isset($_GET["ID"])&&isset($_SESSION["username"])){
     $query = "SELECT * FROM Post WHERE `ID`='" . $_GET["ID"] . "' LIMIT 1";
     $result = mysqli_query($con, $query);
     $rowCount = mysqli_num_rows($result);
     if ($rowCount > 0) {
         while ($row = mysqli_fetch_array($result)) {
             $topicID = $row["Topic_ID"];
-            if($row["User_ID"]!=$user["ID"]){
+            if($row["User_ID"]!=$_SESSION["ID"]){
                 echo 'You didn\'t post that.';
                 echo "<script> setTimeout(function(){ window.location='topic.php?ID=".$topicID."'; }, 2000); </script>";
                 exit;
@@ -31,6 +31,6 @@ if(isset($_GET["ID"])&&isset($user)){
     }
 } else {
     echo 'You are not logged in to delete Posts';
-    echo '<script> window.location="login.php? </script>';
+    echo '<script>  setTimeout(function(){ window.location="login.php"  }, 2000);</script>';
     exit;
 }
