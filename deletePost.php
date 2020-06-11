@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "doLogin.php";
 if(isset($_GET["ID"])&&isset($user)){
     $query = "SELECT * FROM Post WHERE `ID`='" . $_GET["ID"] . "' LIMIT 1";

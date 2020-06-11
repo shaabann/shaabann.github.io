@@ -1,6 +1,8 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
-
 <head>
   <title>Reddit 2.0</title>
   <link rel="stylesheet" href="style.css">

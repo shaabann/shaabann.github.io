@@ -7,6 +7,7 @@
   </head>
   <body>
     <?php
+    session_start();
       include "navbar.php";
     	include_once('connect.php');
 

@@ -1,6 +1,8 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-
 <head>
   <meta charset="utf-8">
   <title>Reddit 2.0</title>
@@ -30,8 +32,9 @@
     $query= "UPDATE User SET Password='".hash("sha256",$_POST["username"].hash("sha256",$_POST["password"]).$salt)."' WHERE `Username`='" . $_POST["username"]. "' LIMIT 1";
     $result = mysqli_query($con, $query);
     $rowCount = mysqli_num_rows($result);
-    setcookie("username", $_POST["username"], time() + (86400 * 30*365), "/");
-    setcookie("password", hash("sha256",$_POST["password"]), time() + (86400 * 30*365), "/");
+
+    $_SESSION["username"] = $_POST["username"];
+    $_SESSION["password"] = $_POST["password"];
     echo '<meta http-equiv="refresh" content="0; url=index.php" /></head></html>';
 
   } else if (isset($_POST["username"])) {
@@ -53,13 +56,14 @@
     if ($rowCount > 0) {
       while ($row = mysqli_fetch_array($result)) {
         $user=$row;
+      $_SESSION['user'] = $user; 
       }
     } else {
       echo 'Invalid Password';
       exit;
     }
-    setcookie("username", $_POST["username"], time() + (86400 * 30*365), "/");
-    setcookie("password", hash("sha256",$_POST["password"]), time() + (86400 * 30*365), "/");
+    //setcookie("username", $_POST["username"], time() + (86400 * 30*365), "/");
+    //setcookie("password", hash("sha256",$_POST["password"]), time() + (86400 * 30*365), "/");
     echo '<meta http-equiv="refresh" content="0; url=index.php" /></head></html>';
     exit;
   }

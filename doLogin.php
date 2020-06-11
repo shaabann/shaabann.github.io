@@ -1,7 +1,7 @@
 <?php
 require_once "connect.php";
-if (isset($_COOKIE["username"])) {
-    $query = "SELECT Salt FROM User WHERE `Username`='" . $_COOKIE["username"] . "' LIMIT 1";
+if (isset($_SESSION["username"])) {
+    $query = "SELECT Salt FROM User WHERE `Username`='" . $_SESSION["username"] . "' LIMIT 1";
     $result = mysqli_query($con, $query);
     $rowCount = mysqli_num_rows($result);
     if ($rowCount > 0) {
@@ -12,7 +12,7 @@ if (isset($_COOKIE["username"])) {
         echo 'Invalid Username';
         exit;
     }
-    $query = "SELECT Username,ID,Email,Join_Date FROM User WHERE Username='" . $_COOKIE["username"] . "' AND Password=" . '"' . hash("sha256", $_COOKIE["username"] . $_COOKIE["password"] . $salt) . '"' . " LIMIT 1";
+    $query = "SELECT Username,ID,Email,Join_Date FROM User WHERE `Username`='" . $_SESSION["username"]. "' LIMIT 1";
     $result = mysqli_query($con, $query);
     $rowCount = mysqli_num_rows($result);
     if ($rowCount > 0) {

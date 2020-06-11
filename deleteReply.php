@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "doLogin.php";
 if(isset($_GET["ID"])&&isset($user)) {
     $query = "SELECT * FROM `Reply` Left JOIN Post ON Reply.Post_ID = Post.ID WHERE Reply.ID ='" . $_GET["ID"] . "' LIMIT 1";

@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "doLogin.php";
 if(isset($_POST["reply"])&&isset($_POST["Post_ID"])){
     $query = "INSERT INTO Reply (Author,Body,Post_ID,User_ID) VALUES ('".$user["Username"]."','".$_POST["reply"]."','".$_POST["Post_ID"]."','".$user["ID"]."')";

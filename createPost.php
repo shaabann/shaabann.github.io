@@ -1,5 +1,7 @@
 <?php
+session_start();
 require_once "doLogin.php";
+$user = "SELECT Username,ID,Email,Join_Date FROM User WHERE `Username`='" . $_SESSION["username"]. "' LIMIT 1";
 if(isset($_POST["Title"])&&isset($_POST["Topic_ID"])&&isset($_POST["body"])&&isset($_POST["Topic_ID"])){
     $query = "INSERT INTO Post (Title,Body,User_ID,Topic_ID) VALUES ('".$_POST["Title"]."','".$_POST["body"]."','".$user["ID"]."','".$_POST["Topic_ID"]."')";
     $result = mysqli_query($con, $query);
