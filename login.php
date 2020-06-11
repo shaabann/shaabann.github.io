@@ -8,7 +8,7 @@ session_start();
   <title>Reddit 2.0</title>
   <link rel="stylesheet" href="style.css">
   <?php
-  if(isset($_POST["email"])) { 
+  if(isset($_POST["email"])) {
     if($_POST["password"]!=$_POST["password_check"]) {
       echo "Password check failed.";
       echo '<meta http-equiv="refresh" content="5; url=index.php" /></head></html>';
@@ -56,14 +56,16 @@ session_start();
     if ($rowCount > 0) {
       while ($row = mysqli_fetch_array($result)) {
         $user=$row;
-      $_SESSION['user'] = $user; 
+        $ID=$row["ID"];
       }
     } else {
       echo 'Invalid Password';
       exit;
     }
-    //setcookie("username", $_POST["username"], time() + (86400 * 30*365), "/");
-    //setcookie("password", hash("sha256",$_POST["password"]), time() + (86400 * 30*365), "/");
+    $_SESSION["username"] = $_POST["username"];
+    $_SESSION['ID'] = $ID;
+    // setcookie("username", $_POST["username"], time() + 3600, '/CS340/');
+    // setcookie("password", hash("sha256",$_POST["password"]), time() + 3600, '/CS340/');
     echo '<meta http-equiv="refresh" content="0; url=index.php" /></head></html>';
     exit;
   }
@@ -79,7 +81,7 @@ session_start();
         <form method="post" action="login.php">
           Username: <input type="text" name="username" />
           Password: <input type="password" name="password">
-          <input type="submit" />
+          <input type="submit" value="Login"/>
         </form>
       </div>
       <div class="sign-up">

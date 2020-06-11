@@ -46,7 +46,7 @@
                         <textarea id="post" name="reply" required placeholder="Text only" maxlength="1500" style="width:100%"></textarea>
                         <input name="Post_ID" style="display:none;" value="<?php echo $post_row['ID'];?>"/>
                         <input name="Topic_ID" style="display:none;" value="<?php echo $_GET['ID'];?>"/>
-                        <input id="submit" type="submit"/>
+                        <input id="submit" type="submit" value"Reply"/>
                       </fieldset>
                     </form>
                     <?php
@@ -83,7 +83,7 @@
             <input name="Title" type="text" required placeholder="A Great Title" maxlength="32" />
             <input name="Topic_ID" value="<?php echo $_GET["ID"]; ?>" style="display:none;"/>
             <textarea name="body" required placeholder="Post Body" maxlength="1500" style="width:100%"></textarea>
-            <input type="submit" name="submit" value="submit"></input>
+            <input type="submit" name="submit" value="Post"></input>
           </fieldset>
         </form>
       </div>
